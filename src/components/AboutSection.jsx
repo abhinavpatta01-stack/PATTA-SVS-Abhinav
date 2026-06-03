@@ -54,8 +54,8 @@ export default function AboutSection() {
             }} />
 
             <img
-              src="/founder_portrait.png"
-              alt="Patta SVS Abhinav"
+              src={`${import.meta.env.BASE_URL}founder_portrait.png`}
+              alt="Abhinav Patta"
               style={{
                 width: '100%',
                 height: '100%',
