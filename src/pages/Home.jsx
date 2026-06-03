@@ -288,7 +288,7 @@ function AboutSlide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.2fr)', gap: '4rem', alignItems: 'center' }}>
           {/* Left */}
           <motion.div variants={fadeUp} className="glass" style={{ aspectRatio: '3/4', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-            <img src="/founder_portrait.png" alt="Patta SVS Abhinav" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }} />
+            <img src="/ai_portrait.png" alt="Patta SVS Abhinav" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px' }} />
           </motion.div>
 
           {/* Right */}
