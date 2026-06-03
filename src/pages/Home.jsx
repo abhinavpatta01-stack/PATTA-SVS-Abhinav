@@ -204,15 +204,13 @@ function VisionSlide() {
           <span className="slide-label">The Vision</span>
         </motion.div>
         <motion.h2 variants={fadeUp} style={{ 
-            fontSize: 'clamp(2rem, 5vw, 4rem)', 
+            fontSize: 'clamp(2rem, 4vw, 3.5rem)', 
             fontWeight: 900, 
             letterSpacing: '1px', 
-            lineHeight: 1.1,
+            lineHeight: 1.2,
             marginBottom: '2rem'
           }}>
-          Building the bridge between<br />
-          <span className="gradient-text-1">physical engineering</span><br />
-          and <span className="gradient-text-2">digital architecture</span>
+          Building the bridge between <span className="gradient-text-1">physical engineering</span> and <span className="gradient-text-2">digital architecture</span>.
         </motion.h2>
         <motion.p variants={fadeUp} style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.25rem)', color: 'var(--text-soft)', lineHeight: 1.8, marginBottom: '2rem', fontWeight: 300 }}>
           I founded <strong>NOVELLEYX</strong> to shatter boundaries—merging mechanical precision with intelligent automation and advanced AI. We aren't just optimizing systems; we are building a next-generation ecosystem where heavy-hitting engineering and premium digital transformation converge into unstoppable, scalable innovation.
