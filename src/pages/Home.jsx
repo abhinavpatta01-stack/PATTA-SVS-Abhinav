@@ -192,17 +192,24 @@ function HeroSlide() {
 
 // ─── SLIDE 2: VISION ────────────────────────────────────────────────────────
 function VisionSlide() {
+  const pillars = [
+    { id: '01', title: 'Physical Engineering', desc: 'Precision mechanics, smart hardware design, and intelligent automation.', gradient: 1 },
+    { id: '02', title: 'Digital Architecture', desc: 'Scalable cloud infrastructure, elite full-stack systems, and seamless user experiences.', gradient: 2 },
+    { id: '03', title: 'AI Intelligence', desc: 'Fusing neural capability into physical workflows to drive autonomous growth.', gradient: 3 }
+  ];
+
   return (
     <section id="vision" className="slide">
       <motion.div
         className="slide-content glass"
-        initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
+        initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
         variants={stagger}
-        style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto', padding: '4rem 2rem' }}
+        style={{ textAlign: 'center', maxWidth: '1100px', margin: '0 auto', padding: '4rem 2rem' }}
       >
         <motion.div variants={fadeUp}>
           <span className="slide-label">The Vision</span>
         </motion.div>
+        
         <motion.h2 variants={fadeUp} style={{ 
             fontSize: 'clamp(2rem, 4vw, 3.5rem)', 
             fontWeight: 900, 
@@ -212,12 +219,51 @@ function VisionSlide() {
           }}>
           Building the bridge between <span className="gradient-text-1">physical engineering</span> and <span className="gradient-text-2">digital architecture</span>.
         </motion.h2>
-        <motion.p variants={fadeUp} style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.25rem)', color: 'var(--text-soft)', lineHeight: 1.8, marginBottom: '2rem', fontWeight: 300 }}>
+        
+        <motion.p variants={fadeUp} style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.25rem)', color: 'var(--text-soft)', lineHeight: 1.8, marginBottom: '1.5rem', fontWeight: 300, maxWidth: '900px', margin: '0 auto 1.5rem' }}>
           I founded <strong>NOVELLEYX</strong> to shatter boundaries—merging mechanical precision with intelligent automation and advanced AI. We aren't just optimizing systems; we are building a next-generation ecosystem where heavy-hitting engineering and premium digital transformation converge into unstoppable, scalable innovation.
         </motion.p>
+        
         <motion.p variants={fadeUp} style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '1px' }}>
           We don't just anticipate the future. We engineer it.
         </motion.p>
+
+        {/* THE PILLARS OF INNOVATION */}
+        <div style={{ marginTop: '3rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(255,255,255,0.05)', animation: 'fadeInUp 0.8s ease-out' }}>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '2rem' }}>
+            The Pillars of Innovation
+          </h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', textAlign: 'left' }}>
+            {pillars.map((p, i) => (
+              <div 
+                key={i} 
+                className="glass-card-hover"
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '2rem', transition: 'all 0.3s' }}
+                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; e.currentTarget.style.boxShadow = 'none'; }}
+              >
+                <div className={`gradient-text-${p.gradient}`} style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '1rem', opacity: 0.8 }}>{p.id}</div>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff', marginBottom: '0.8rem', letterSpacing: '1px' }}>{p.title}</h4>
+                <p style={{ color: 'var(--text-soft)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300 }}>{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA BUTTON */}
+        <div style={{ marginTop: '3rem', animation: 'fadeInUp 1s ease-out' }}>
+          <a href="#projects" style={{
+            display: 'inline-block', padding: '1.2rem 3rem', background: 'var(--gradient-1)', color: '#000',
+            fontWeight: 800, letterSpacing: '2px', textTransform: 'uppercase', borderRadius: '8px',
+            textDecoration: 'none', boxShadow: '0 0 30px rgba(167,139,250,0.3)', transition: 'transform 0.3s'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            Explore the Ecosystem
+          </a>
+        </div>
+
       </motion.div>
     </section>
   );
