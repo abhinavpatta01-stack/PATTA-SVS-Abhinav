@@ -127,10 +127,10 @@ export default function MediaHub() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 <label style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>Subject Line:</label>
                 <select required style={{ width: '100%', padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px', color: '#fff', outline: 'none', appearance: 'none', fontSize: '0.9rem' }}>
-                  <option value="" disabled selected>[ Select: Venture Collaboration / Engineering Build ]</option>
-                  <option value="venture">Venture Collaboration</option>
-                  <option value="engineering">Engineering Build</option>
-                  <option value="other">Other Inquiry</option>
+                  <option value="" disabled selected style={{ color: '#000' }}>[ Select: Venture Collaboration / Engineering Build ]</option>
+                  <option value="venture" style={{ color: '#000' }}>Venture Collaboration</option>
+                  <option value="engineering" style={{ color: '#000' }}>Engineering Build</option>
+                  <option value="other" style={{ color: '#000' }}>Other Inquiry</option>
                 </select>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
