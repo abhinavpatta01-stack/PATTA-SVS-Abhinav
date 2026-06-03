@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import YouTubeBackground from '../components/YouTubeBackground';
 import LiveStatus from '../components/LiveStatus';
 import EasterEggGreeting from '../components/EasterEggGreeting';
 import MediaHub from '../components/MediaHub';
@@ -463,6 +462,14 @@ function JourneySlide() {
 // ─── MAIN APP ───────────────────────────────────────────────────────────────
 function Home() {
   const [entered, setEntered] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (entered && videoRef.current) {
+      videoRef.current.volume = 0.5; // Start at 50% volume
+      videoRef.current.play().catch(e => console.log('Video play failed:', e));
+    }
+  }, [entered]);
 
   return (
     <>
@@ -470,14 +477,32 @@ function Home() {
         {!entered && <EnterScreen key="enter" onEnter={() => setEntered(true)} />}
       </AnimatePresence>
 
-      {/* YouTube video background with audio — only after user click */}
-      <YouTubeBackground isReady={entered} />
+      {/* Background Video */}
+      {entered && (
+        <video 
+          ref={videoRef} 
+          src={`${import.meta.env.BASE_URL}background_video.mp4`} 
+          loop 
+          playsInline
+          style={{
+            position: 'fixed',
+            right: 0,
+            bottom: 0,
+            minWidth: '100%',
+            minHeight: '100%',
+            width: 'auto',
+            height: 'auto',
+            zIndex: -1,
+            objectFit: 'cover'
+          }}
+        />
+      )}
 
-      {/* Gradient tint overlay on top of video */}
+      {/* Gradient tint overlay on top of black background */}
       {entered && (
         <div style={{
           position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none',
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.85) 100%)'
+          background: 'radial-gradient(circle at center, rgba(0,243,255,0.03) 0%, rgba(0,0,0,0.85) 100%)'
         }} />
       )}
 
