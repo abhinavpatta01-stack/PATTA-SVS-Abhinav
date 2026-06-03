@@ -58,10 +58,10 @@ function CustomCursor() {
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <CustomCursor />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );
